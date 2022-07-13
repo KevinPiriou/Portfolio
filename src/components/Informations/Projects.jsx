@@ -1,19 +1,8 @@
-import React from "react";
+import { Badge, Image, Card, Button, Modal } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
-import {
-  Badge,
-  Container,
-  Image,
-  Card,
-  Button,
-  Modal,
-  ProgressBar,
-} from "react-bootstrap";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-const Home = () => {
+const Projects = () => {
   const [showMatchAndFeat, setShowMatchAndFeat] = useState(false);
   const [showEpicat, setShowEpicat] = useState(false);
   const [showSpaceX, setShowSpaceX] = useState(false);
@@ -28,308 +17,8 @@ const Home = () => {
   const handleShowEpicat = () => setShowEpicat(true);
   const handleShowSpaceX = () => setShowSpaceX(true);
   const handleShowPotager = () => setShowPotager(true);
-
   return (
-    <Container className="flex-col md:flex md:flex-row justify-between p-4 mt-5">
-      <div className="mb-5">
-        <h2
-          className="h5 text-5xl md:text-6xl lg:text-7xl mt-5"
-          style={{ opacity: "1" }}
-        >
-          Bonjour, je m'appelle
-        </h2>
-
-        <br></br>
-        <Card
-          bg="dark"
-          style={{
-            border: "solid",
-            borderColor: "#F09D0F",
-            boxShadow: "0 5px 10px rgba(0, 0, 0, 0.2)",
-          }}
-          className="m-2 p-4"
-        >
-          <p className="display-6 text-5xl md:text-6xl lg:text-8xl my-6 md:my-9">
-            Kévin PIRIOU
-          </p>
-          <hr></hr>
-          <p
-            className="h4 font-body text-2xl md:text-3xl "
-            style={{
-              opacity: "1",
-              transform: "translateX(0px) translateZ(0px)",
-            }}
-          >
-            Alternant Développeur Web{" "}
-          </p>
-          <em className="text-center">
-            - Admis à l'école Wild Code School pour une Formation développeur
-            d'applications en alternance -
-          </em>
-          <hr></hr>
-
-          <div
-            className="d-flex p-2 justify-content-center mt-3 mb-3"
-            style={{
-              border: "solid",
-              borderColor: "#026760",
-              boxShadow: "0 5px 10px rgba(0, 0, 0, 0.2)",
-              flexDirection: "column",
-            }}
-          >
-            <div className="h4 font-body text-2xl md:text-3xl">
-              <p>Statut actuel</p>
-            </div>
-
-            <div>
-              <em>
-                - En recherche d'une entreprise pour un contrat de
-                professionalisation d'une durée de 1 an -
-              </em>
-            </div>
-          </div>
-
-          <Container
-            fluid
-            className="d-flex flex-row justify-content-evenly m-2 "
-          >
-            <Container
-              fluid
-              style={{
-                backgroundColor: "#202529",
-                border: "solid",
-                margin: "5px",
-                padding: "15px",
-                maxWidth: "fill-available",
-                width: "200px",
-              }}
-            >
-              <h6>SoftSkills</h6>
-              <hr></hr>
-              <div
-                className="d-flex"
-                style={{ flexDirection: "column", maxWidth: "fill-available" }}
-              >
-                <p>Autonomie</p>
-                <ProgressBar
-                  style={{
-                    backgroundColor: "#3E3E3E",
-                    border: "solid",
-                    borderColor: "black",
-                  }}
-                  variant="light"
-                  animated
-                  now={90}
-                  max={100}
-                  min={0}
-                />
-                <br></br>
-                <p> Travail en équipe </p>
-                <ProgressBar
-                  style={{
-                    backgroundColor: "#3E3E3E",
-                    border: "solid",
-                    borderColor: "black",
-                  }}
-                  variant="light"
-                  animated
-                  now={73}
-                  max={100}
-                  min={0}
-                />
-                <br></br>
-                <p>Curiosité</p>
-                <ProgressBar
-                  style={{
-                    backgroundColor: "#3E3E3E",
-                    border: "solid",
-                    borderColor: "black",
-                  }}
-                  variant="light"
-                  animated
-                  now={90}
-                  max={100}
-                  min={0}
-                />
-                <br></br>
-                <p>Communication</p>
-                <ProgressBar
-                  style={{
-                    backgroundColor: "#3E3E3E",
-                    border: "solid",
-                    borderColor: "black",
-                  }}
-                  variant="light"
-                  animated
-                  now={70}
-                  max={100}
-                  min={0}
-                />
-                <br></br>
-              </div>
-            </Container>
-
-            <Container
-              fluid
-              style={{
-                backgroundColor: "#202529",
-                border: "solid",
-                margin: "5px",
-                padding: "15px",
-                maxWidth: "fill-available",
-                width: "200px",
-              }}
-            >
-              <h6>HardSkills</h6>
-              <hr></hr>
-              <div
-                className="d-flex"
-                style={{ flexDirection: "column", maxWidth: "fill-available" }}
-              >
-                <p style={{ color: "#DD4B26" }}> HTML </p>
-                <ProgressBar
-                  style={{
-                    backgroundColor: "#DD4B26",
-                    border: "solid",
-                    borderColor: "black",
-                  }}
-                  variant="dark"
-                  animated
-                  now={15}
-                  max={100}
-                  min={0}
-                />
-                <br></br>
-                <p style={{ color: "#244BDD" }}>CSS</p>
-                <ProgressBar
-                  style={{
-                    backgroundColor: "#244BDD",
-                    border: "solid",
-                    borderColor: "black",
-                  }}
-                  variant="dark"
-                  animated
-                  now={35}
-                  max={100}
-                  min={0}
-                />
-                <br></br>
-                <p style={{ color: "#EFD81E" }}> JavaScript </p>
-                <ProgressBar
-                  style={{
-                    backgroundColor: "#EFD81E",
-                    border: "solid",
-                    borderColor: "black",
-                  }}
-                  variant="dark"
-                  animated
-                  now={30}
-                  max={100}
-                  min={0}
-                />
-                <br></br>
-                <p style={{ color: "#5ED3F3" }}> React & React Native </p>
-                <ProgressBar
-                  style={{
-                    backgroundColor: "#5ED3F3",
-                    border: "solid",
-                    borderColor: "black",
-                    color: "#5ED3F3",
-                  }}
-                  variant="dark"
-                  animated
-                  now={50}
-                  max={100}
-                  min={0}
-                />
-                <br></br>
-              </div>
-            </Container>
-          </Container>
-          <br></br>
-        </Card>
-      </div>
-      <hr></hr>
-      <div className="mb-5">
-        <p className="display-5 text-6xl text-t-primary p-4 font-display tracking-wider  ">
-          A propos de moi
-        </p>
-        <em
-          className="display-6"
-          style={{ fontFamily: "Coda", fontSize: "18px" }}
-        >
-          Actuellement en reconversion en tant que développeur web, je suis à la
-          recherche d’un contrat de professionnalisation d’une durée de un an à
-          partir de septembre 2022. Passionné par le numérique et ses outils,
-          j'ai su faire preuve de curiosité et d'initiative lors de mes
-          précédentes formations durant lesquelles j'ai appris le métier de
-          développeur web. Cependant, conscient de la richesse que ce monde
-          offre en connaissances, je préfère apprendre auprès d'une entreprise,
-          de ses collaborateurs et de leur savoir, pour ainsi me garantir une
-          qualiﬁcation qualitative.
-        </em>
-      </div>
-      <hr></hr>
-      <p className="display-5 text-6xl text-t-primary p-4 font-display tracking-wider  ">
-        Mes Formations
-      </p>
-
-      <Container
-        fluid
-        style={{
-          backgroundColor: "#202529",
-          border: "solid",
-          borderColor: "#F09D0F",
-          boxShadow: "0 5px 10px rgba(0, 0, 0, 0.2)",
-        }}
-      >
-        <div className="d-flex flex-row justify-content-center ">
-          <div
-            className="m-2 p-2 text-5xl md:text-6xl lg:text-8xl my-6 md:my-9"
-            style={{ backgroundColor: "#6666CE" }}
-          >
-            <h1 className="display-6">THE HACKING PROJECT</h1>
-            <em>'Formation Fullstack Ruby'</em>
-            <br></br>
-            <br></br>
-            <p>Sept 21 / Dec 21</p>
-
-            <p>- Distanciel -</p>
-            <p class="flex justify-content-center m-2 p-2">
-              <hr></hr>
-              <p className="text-dark">Notions et languages appris</p>
-              <p style={{ listStyleType: "none" }}>
-                HTML CSS JS Bootstrap AJAX Git GitHub<br></br> RubyOnRails POO
-                MVC API SQL Agile Scrum
-              </p>
-              <hr></hr>
-            </p>
-          </div>
-          <div className="vr"></div>
-          <div className="d-flex flex-row justify-content-evenly"></div>
-          <div
-            className="m-2 p-2 text-6xl md:text-6xl lg:text-8xl my-6 md:my-9"
-            style={{ backgroundColor: "#EF6969", color: "whitesmoke" }}
-          >
-            <h1 className="display-6">WILD CODE SCHOOL</h1>
-            <em>'Spécialisation Front-end JS | React'</em>
-            <br></br>
-            <br></br>
-            <p>Fev 22 / Mai 22</p>
-
-            <p>- Distanciel -</p>
-            <p className="flex justify-content-center m-2 p-2">
-              <hr></hr>
-              <p className="text-dark">Notions et languages appris</p>
-              <p style={{ listStyleType: "none" }}>
-                JS React ReactNative Node.js NPM Agile Scrum
-              </p>
-              <hr></hr>
-            </p>
-          </div>
-        </div>
-      </Container>
-
+    <div>
       <p className="display-5 text-6xl text-t-primary p-4  font-display tracking-wider  ">
         Mes Projets
       </p>
@@ -337,8 +26,12 @@ const Home = () => {
       <div className="flex flex-col items-center" style={{ heigth: "auto" }}>
         <div>
           <Card
-            className="d-flex mt-3 p-3 rounded border-info bg-dark text-white"
-            style={{ boxShadow: "0 5px 10px rgba(0, 0, 0, 0.2)" }}
+            className="d-flex mt-3 p-3 mb-5 border-info text-white"
+            style={{
+              boxShadow: "0 5px 10px rgba(0, 0, 0, 1)",
+              backgroundColor: "#171615",
+              borderRadius: "50px",
+            }}
           >
             <Card.Header>
               <h2 className="text-success">
@@ -420,7 +113,7 @@ const Home = () => {
               <Card.Title>Description </Card.Title>
 
               <div className="flex justify-content-center mt-2">
-                <Card.Text>
+                <Card.Text style={{ fontFamily: "Coda", fontSize: "18px" }}>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
                   standard dummy text ever since the 1500s, when an unknown
@@ -491,8 +184,12 @@ const Home = () => {
             </div>
           </Card>
           <Card
-            className="d-flex mt-3 p-3 rounded border-info bg-dark text-white"
-            style={{ boxShadow: "0 5px 10px rgba(0, 0, 0, 0.2)" }}
+            className="d-flex mt-3 p-3 mb-5 border-info text-white"
+            style={{
+              boxShadow: "0 5px 10px rgba(0, 0, 0, 1)",
+              backgroundColor: "#171615",
+              borderRadius: "50px",
+            }}
           >
             <Card.Header>
               <h2 className="text-success">
@@ -574,7 +271,7 @@ const Home = () => {
               <Card.Title>Description </Card.Title>
 
               <div className="flex justify-content-center mt-2">
-                <Card.Text>
+                <Card.Text style={{ fontFamily: "Coda", fontSize: "18px" }}>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
                   standard dummy text ever since the 1500s, when an unknown
@@ -636,8 +333,12 @@ const Home = () => {
           </Card>
 
           <Card
-            className="d-flex mt-3 p-3 rounded border-info bg-dark text-white"
-            style={{ boxShadow: "0 5px 10px rgba(0, 0, 0, 0.2)" }}
+            className="d-flex mt-3 p-3 mb-5 border-info text-white"
+            style={{
+              boxShadow: "0 5px 10px rgba(0, 0, 0, 1)",
+              backgroundColor: "#171615",
+              borderRadius: "50px",
+            }}
           >
             <Card.Header>
               <h2 className="text-success">
@@ -723,7 +424,7 @@ const Home = () => {
               <Card.Title>Description </Card.Title>
 
               <div className="flex justify-content-center mt-2">
-                <Card.Text>
+                <Card.Text style={{ fontFamily: "Coda", fontSize: "18px" }}>
                   Première plateforme d'entraide créative Match & Feat est un
                   lieu de rencontre artistique pour collaboration musicale,
                   poster votre projet inachevé afin de laisser la créativité
@@ -788,8 +489,12 @@ const Home = () => {
         </div>
         <div>
           <Card
-            className="d-flex mt-3 p-3 rounded border-info bg-dark text-white"
-            style={{ boxShadow: "0 5px 10px rgba(0, 0, 0, 0.2)" }}
+            className="d-flex mt-3 mb-5 p-3 border-info text-white"
+            style={{
+              boxShadow: "0 5px 10px rgba(0, 0, 0, 1)",
+              backgroundColor: "#171615",
+              borderRadius: "50px",
+            }}
           >
             <Card.Header>
               <h2 className="text-success">
@@ -871,7 +576,7 @@ const Home = () => {
               <Card.Title>Description </Card.Title>
 
               <div className="flex justify-content-center mt-2">
-                <Card.Text>
+                <Card.Text style={{ fontFamily: "Coda", fontSize: "18px" }}>
                   scrollable-div Lorem Ipsum is simply dummy text of the
                   printing and typesetting industry. Lorem Ipsum has been the
                   industry's standard dummy text ever since the 1500s, when an
@@ -933,8 +638,8 @@ const Home = () => {
           </Card>
         </div>
       </div>
-    </Container>
+    </div>
   );
 };
 
-export default Home;
+export default Projects;

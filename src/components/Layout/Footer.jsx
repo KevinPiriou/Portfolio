@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const myFooter = () => {
   return (
     <div>
-      <Navbar id="main-footer" className="d-flex">
+      <Navbar id="main-footer" className="d-flex fixed-bottom">
         <Container className="text-white align-baseline">
           <div className="text-center">
             <a
