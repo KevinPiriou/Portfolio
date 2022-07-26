@@ -10,6 +10,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  min-height: 100%;
   height: 100%;
   width: 100%;
   background-color: #031c2c;
@@ -18,9 +19,9 @@ body {
 /****************** APP *************************/
 .App {
   display: flex;
-  min-height: 100vh;
+
   flex-direction: column;
-  flex: 1;
+
   text-align: center;
   background-color: #0e334b;
   background-image: linear-gradient(
@@ -35,12 +36,82 @@ body {
   color: whitesmoke;
   font-family: "Concert One";
 }
-/****************** INTRO *************************/
-
-/****************** NavBar *************************/
-#main-navbar {
-  background-color: #161616;
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 9px;
 }
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+
+  background-image: linear-gradient(
+    to bottom,
+    #1e1d22,
+    #1f1f23,
+    #202024,
+    #222224,
+    #232325
+  );
+}
+/****************** INTRO *************************/
+.container-intro {
+  background-image: linear-gradient(
+    to right top,
+    #1f1f23,
+    #21252e,
+    #1e2c39,
+    #153342,
+    #003b4a
+  );
+  margin-top: 25px;
+  height: max-content;
+}
+.ocean {
+  height: 5%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #015871;
+}
+
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg)
+    repeat-x;
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 9s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 9s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+    swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%,
+  100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+/****************** NavBar *************************/
+
 #main-title {
   text-shadow: 0 0 80px rgba(255, 255, 255, 0.25);
   display: block;
@@ -50,10 +121,10 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine 150s linear infinite;
+  animation: hovering 150s linear infinite;
 }
 
-@keyframes shine {
+@keyframes hovering {
   from {
     background-position: center 50%;
   }
@@ -84,7 +155,7 @@ body {
   bottom: 0;
   left: 0;
   right: 1;
-  background: #994c27;
+  background: #d14f09;
   height: 2px;
 }
 
@@ -94,39 +165,239 @@ body {
 
 /****************** FOOTER *************************/
 #main-footer {
-  background-color: #1e1d22;
+  background-image: linear-gradient(
+    to bottom,
+    #171615,
+    #191817,
+    #1b1a19,
+    #1d1c1b,
+    #1f1e1d
+  );
   font-family: "Coda";
-  height: 30px;
 }
 
-/****************** ICON *************************/
+/****************** NAVLINK *************************/
 .hover-fx {
   color: whitesmoke;
   width: 10px;
   height: 10px;
 }
 /****************** PRESENTATION *************************/
+#ghostExclam {
+  display: none;
+}
 .przh1 {
-  color: #853a3a;
+  color: #d14f09;
 
   font-weight: bold;
   font-family: monospace;
   letter-spacing: 5px;
-  cursor: pointer;
+  cursor: progress;
 }
+.przh1 span:nth-child(5) {
+  display: none;
+}
+
 .przh1 span {
-  transition: 1s linear;
+  transition: 1.5s linear;
 }
 .przh1:hover span:nth-child(1) {
-  margin-right: 2px;
+  margin-right: 1px;
 }
 .przh1:hover span:nth-child(1):after {
-  content: "'";
+  letter-spacing: 1px;
+  content: "T'S";
 }
 .przh1:hover span:nth-child(2) {
+  display: none;
+}
+.przh1:hover span:nth-child(3) {
   margin-left: 30px;
+}
+
+.przh1:hover span:nth-child(4) {
+  display: none;
+}
+.przh1:hover span:nth-child(5) {
+  display: initial;
 }
 .przh1:hover span {
   color: #fff;
   text-shadow: 0 0 10px #178351, 0 0 20px #178351, 0 0 40px #178351;
+}
+
+#name-effect {
+  box-shadow: inset 0 0 0 0 #54b3d6;
+  color: #d14f09;
+  margin: 0 -0.25rem;
+  padding: 0 0.25rem;
+}
+
+.info-collapse {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  height: 55px;
+  width: 160px;
+  position: relative;
+  transition: height 0.5s;
+  -webkit-transition: height 0.5s;
+  text-align: center;
+  overflow: hidden;
+  transition: 1.5s;
+  background-color: #1e1d22;
+  font-family: "Coda";
+}
+.info-collapseSoft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  height: 55px;
+  width: 160px;
+  position: relative;
+  transition: height 0.5s;
+  -webkit-transition: height 0.5s;
+  text-align: center;
+  overflow: hidden;
+  transition: 1.5s;
+  background-color: #1e1d22;
+  font-family: "Coda";
+}
+
+.info-collapse:hover {
+  height: 275px;
+  width: 160px;
+}
+.info-collapse:hover #arrow {
+  display: none;
+}
+.info-collapse:hover #tagSkills {
+  display: none;
+}
+
+.info-collapseSoft:hover {
+  height: 250px;
+  width: 185px;
+}
+.info-collapseSoft:hover #arrow {
+  display: none;
+}
+.info-collapseSoft:hover #tagSkills {
+  display: none;
+}
+#cv {
+  width: fit-content;
+}
+
+/****************** CONTACT *************************/
+@media all and (max-width: 499px) {
+  #icon-contact {
+    display: none;
+  }
+  #cv {
+    width: 88%;
+  }
+}
+#sendButton:hover {
+  background-color: "red";
+}
+/****************** TRAINING*************************/
+.pins-wild {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.pins-wild img {
+  height: 8rem;
+  width: 8rem;
+  border-radius: 50px;
+  border: 2px solid red;
+}
+
+.pins-thp {
+  background: linear-gradient(
+    to bottom,
+    #1e1d22,
+    #1f1f23,
+    #202024,
+    #222224,
+    #232325
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.pins-thp img {
+  height: 8rem;
+  width: 8rem;
+  border-radius: 50%;
+}
+/****************** Project *************************/
+#projectCard::before {
+  visibility: hidden;
+  z-index: 99;
+}
+
+#projectCard {
+  visibility: visible;
+  -webkit-animation: bounce-in 0.4s;
+  -moz-animation: bounce-in 0.4s;
+  animation: bounce-in 0.4s;
+}
+@-o-keyframes bounce-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@-webkit-keyframes bounce-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+@-moz-keyframes bounce-in {
+  0% {
+    opacity: 0;
+    -moz-transform: scale(0.5);
+  }
+
+  100% {
+    -moz-transform: scale(1);
+  }
+}
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
 }

@@ -1,14 +1,22 @@
-import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "../../assets/intro.css";
-const Intro = () => {
-  return (
-    <div>
-      <Container fluid className="container-intro">
-        <h1 className="title-intro">PIRIOU KEVIN</h1>
+import NavBar from "./NavBar";
 
-        <Link to={"/Accueil"}>VISITER</Link>
-      </Container>
+const Intro = () => {
+  function unlockBody() {
+    document.body.style = "background:none";
+  }
+  return (
+    <div style={{ backgroundColor: "black", height: "100vh" }}>
+      <NavBar />
+
+      <h1 className="title-intro">Bienvenu sur mon portfolio</h1>
+      <div class="ocean">
+        <div class="wave"></div>
+        <Link to={"/Accueil"} onClick={unlockBody}>
+          VISITER
+        </Link>
+        <div class="wave"></div>
+      </div>
     </div>
   );
 };

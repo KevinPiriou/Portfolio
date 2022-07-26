@@ -15,7 +15,7 @@ const AboutMe = () => {
           outils, j'ai su faire preuve de curiosité et d'initiative lors de mes
           précédentes formations durant lesquelles j'ai appris le métier de
           développeur web. <br></br> Cependant, conscient de la richesse que ce
-          monde offre en connaissances, je préfère apprendre auprès d'une
+          monde offre en connaissances, j'ai choisi d'apprendre auprès d'une
           entreprise, de ses collaborateurs et de leur savoir, pour ainsi me
           garantir une qualiﬁcation qualitative.
         </em>
