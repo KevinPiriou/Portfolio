@@ -8,7 +8,7 @@ import {
 } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-
+import "../../assets/reveal";
 const Projects = ({ aboutWild1 }) => {
   const [showMatchAndFeat, setShowMatchAndFeat] = useState(false);
   const [showEpicat, setShowEpicat] = useState(false);

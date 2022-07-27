@@ -1,12 +1,13 @@
+import "../../assets/reveal";
 const AboutMe = () => {
   return (
     <div>
-      <div className="mb-5">
+      <div className="mb-5 ">
         <p className="display-5 text-6xl text-t-primary p-4 font-display tracking-wider  ">
           A propos de moi
         </p>
         <em
-          className="display-6"
+          className="display-6 "
           style={{ fontFamily: "Coda", fontSize: "18px" }}
         >
           Actuellement en reconversion en tant que développeur web, je suis à la

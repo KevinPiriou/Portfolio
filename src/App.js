@@ -4,7 +4,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import WebFont from "webfontloader";
 import ScrollToTop from "react-scroll-to-top";
-
+import "./assets/reveal";
 // React import
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -31,16 +31,14 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App ">
       <Router>
         <ScrollToTop smooth />
         <Routes>
           <Route
             exact
             path="/"
-            element={
-              <Home refContact={refContact} handleBackClick={handleBackClick} />
-            }
+            element={<Home handleBackClick={handleBackClick} />}
           ></Route>
           <Route
             path="/Accueil"

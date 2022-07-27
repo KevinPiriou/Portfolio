@@ -2,7 +2,7 @@ import { Container, Card, Button } from "react-bootstrap";
 import axios from "axios";
 import fileDownload from "js-file-download";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import "../../assets/reveal";
 const Presentation = () => {
   const handleClick = (url, filename) => {
     axios
@@ -34,7 +34,7 @@ const Presentation = () => {
             boxShadow: "0 5px 10px rgba(0, 0, 0, 1)",
             fontFamily: "Coda",
           }}
-          className="m-2 p-4"
+          className="m-2 p-4 "
         >
           <div
             id="name-effect"
